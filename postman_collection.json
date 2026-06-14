@@ -45,7 +45,7 @@
       }
     },
     {
-      "name": "Generate Password",
+      "name": "Generate Endpoint",
       "request": {
         "method": "POST",
         "header": [
@@ -72,6 +72,43 @@
         "body": {
           "mode": "raw",
           "raw": "{\n  \"length\": 0,\n  \"include_uppercase\": 0,\n  \"include_lowercase\": 0,\n  \"include_numbers\": 0,\n  \"include_symbols\": 0,\n  \"exclude_ambiguous\": 0,\n  \"count\": 0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Bulk Generate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/bulk/generate",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "bulk",
+            "generate"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": 0\n}",
           "options": {
             "raw": {
               "language": "json"
